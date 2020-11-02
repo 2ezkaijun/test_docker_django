@@ -10,5 +10,10 @@ pipeline {
                 '''
             }
         }
+        stage('Deploy') {
+            steps {
+                sh 'scp -p 17593 -r . ubuntu@2.tcp.ngrok.io:/home/ubuntu/test/'
+            }
+        }
     }
 }
